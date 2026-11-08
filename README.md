@@ -1,6 +1,6 @@
-# Data Analyst Portfolio
+# Data Analyst & Data Scientist Portfolio
 
-My data analyst portfolio website — **live at [hadil-ziane.netlify.app](https://hadil-ziane.netlify.app)**.
+My data analyst & data scientist portfolio website — **live at [hadil-ziane.netlify.app](https://hadil-ziane.netlify.app)**.
 
 A single-page site that presents six end-to-end data projects with their real numbers, built by hand with an interactive **Three.js point-cloud globe** in the hero.
 
@@ -38,4 +38,4 @@ Then open http://localhost:3213.
 
 ---
 
-**Author:** Hadil Ziane · [Live site](https://hadil-ziane.netlify.app) · [GitHub](https://github.com/Hadil16)
+**Author:** Hadil Ziane · [Live site](https://hadil-ziane.netlify.app) · [GitHub](https://github.com/Hadil16) · Also a software engineer: [software portfolio](https://github.com/Hadil16/software-engineer-portfolio)
