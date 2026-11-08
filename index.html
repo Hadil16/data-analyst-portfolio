@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hadil Ziane | Data Analyst</title>
+<meta name="description" content="Hadil Ziane, Data Analyst: forecasting, segmentation, churn prediction and energy analysis with SQL, Python and Power BI.">
+<meta property="og:title" content="Hadil Ziane | Data Analyst">
+<meta property="og:description" content="Six end-to-end data projects with real numbers: forecasting, segmentation, churn, energy. SQL, Python, Power BI.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1124'/%3E%3Cpath d='M16 46V30M30 46V18M44 46V26' stroke='%2322D3B5' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--radius:16px;--max:1140px;--ease:cubic-bezier(.2,.7,.2,1)}
+:root[data-theme="dark"]{--bg:#070C1A;--bg2:#0B1326;--panel:#0F1A33;--panel2:#15223F;--line:#1F2E50;--text:#ECF2FF;--muted:#94A3C4;--turq:#22D3B5;--blue:#4C8DFF;--violet:#9B7BFF;--orange:#FF9A3D;--on-turq:#04201B;--shadow:0 20px 50px rgba(0,0,0,.45);--glow:rgba(34,211,181,.18)}
+:root[data-theme="light"]{--bg:#F5F7FC;--bg2:#ECF1FA;--panel:#FFFFFF;--panel2:#F1F5FC;--line:#D9E1EF;--text:#0D1630;--muted:#55627D;--turq:#0B9C84;--blue:#2F6BE0;--violet:#6D4FE0;--orange:#D46A00;--on-turq:#FFFFFF;--shadow:0 20px 50px rgba(13,22,48,.12);--glow:rgba(11,156,132,.12)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+button{font:inherit;color:inherit}
+h1,h2,h3,h4{font-family:Poppins,Inter,sans-serif;line-height:1.15;margin:0}
+.mono{font-family:"JetBrains Mono",Consolas,monospace}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--turq);color:var(--on-turq);padding:8px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.grad{background:linear-gradient(90deg,var(--turq),var(--blue) 55%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* header — every link visible on desktop, no hamburger */
+header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.scrolled{border-bottom-color:var(--line)}
+.bar{display:flex;align-items:center;gap:20px;height:68px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Poppins,sans-serif;font-weight:700;font-size:17px;flex:none}
+.mark i{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--turq),var(--blue));color:#04121F;font-style:normal;font-size:14px;font-weight:800}
+nav.top{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+nav.top::-webkit-scrollbar{display:none}
+nav.top a{text-decoration:none;color:var(--muted);font-size:15px;padding:8px 12px;border-radius:8px;white-space:nowrap;transition:color .2s}
+nav.top a:hover,nav.top a.on{color:var(--text)}
+nav.top a span{color:var(--turq);font-family:"JetBrains Mono",monospace;font-size:13px;margin-right:4px}
+.tools{display:flex;gap:8px;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid transparent;font-size:15px;cursor:pointer;background:none;transition:transform .2s var(--ease),background .2s,border-color .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--turq);color:var(--on-turq);box-shadow:0 8px 24px var(--glow)}
+.btn.ghost{border-color:var(--line);color:var(--text)}
+.btn.ghost:hover{border-color:var(--turq)}
+.btn.small{padding:8px 14px;font-size:14px;border-radius:10px}
+
+/* hero */
+.hero{position:relative;padding:72px 0 64px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:720px;height:720px;background:radial-gradient(closest-side,var(--glow),transparent);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative}
+.hi{color:var(--turq);font-size:15px;margin:0 0 14px}
+.hero h1{font-size:clamp(46px,7vw,86px);font-weight:800;letter-spacing:-1.5px}
+.hero h2{font-size:clamp(26px,3.6vw,46px);font-weight:700;margin-top:8px;letter-spacing:-.5px}
+.lead{color:var(--muted);font-size:18px;max-width:540px;margin:22px 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin-top:26px}
+.badge i{width:9px;height:9px;border-radius:50%;background:var(--turq);box-shadow:0 0 0 0 var(--turq);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--turq) 60%,transparent)}70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.orb{position:relative;aspect-ratio:1;width:100%;max-width:460px;justify-self:center}
+.orb canvas{position:absolute;inset:0;width:100%!important;height:100%!important}
+.orb .face{position:absolute;left:50%;top:50%;width:44%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;object-fit:cover;border:3px solid var(--turq);box-shadow:0 0 0 8px color-mix(in srgb,var(--turq) 14%,transparent),var(--shadow)}
+.orb .tagchip{position:absolute;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:13px;box-shadow:var(--shadow);white-space:nowrap}
+.orb .tagchip b{color:var(--turq);font-family:Poppins,sans-serif}
+.orb .t1{left:-4%;top:16%}
+.orb .t2{right:-2%;bottom:18%}
+
+/* sections */
+section.block{padding:72px 0}
+.head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px}
+.head .num{color:var(--turq);font-size:15px}
+.head h2{font-size:clamp(28px,3.4vw,38px);font-weight:700;white-space:nowrap}
+.head::after{content:"";flex:1;height:1px;background:var(--line);align-self:center;max-width:320px}
+.sub{color:var(--muted);margin:-14px 0 28px;max-width:640px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+
+/* numbers */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpi{padding:20px 20px 14px;display:grid;gap:4px;transition:border-color .3s,transform .3s var(--ease)}
+.kpi:hover{border-color:var(--turq);transform:translateY(-4px)}
+.kpi small{color:var(--muted);font-size:13px}
+.kpi strong{font-family:Poppins,sans-serif;font-size:36px;line-height:1.1}
+.kpi em{font-style:normal;color:var(--muted);font-size:13.5px}
+.kpi svg{width:100%;height:46px;margin-top:8px}
+
+/* flagship */
+.flag{display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;position:relative}
+.flag::before{content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1px;background:linear-gradient(135deg,var(--turq),transparent 40%,transparent 60%,var(--violet));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.flag .shot{background:#06101F;display:flex;align-items:center;padding:22px}
+.flag .shot img{border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.flag .body{padding:30px 32px;display:grid;gap:14px;align-content:start}
+.kind{font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--turq);font-weight:600;font-family:"JetBrains Mono",monospace}
+.flag h3{font-size:30px}
+.flag .q{color:var(--muted);margin:0;font-style:italic}
+.par{display:grid;gap:12px;margin:4px 0 0;padding:0;list-style:none}
+.par li{display:grid;grid-template-columns:78px 1fr;gap:12px;font-size:15px}
+.par b{color:var(--orange);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;padding-top:3px;font-family:"JetBrains Mono",monospace;font-weight:500}
+.par strong{color:var(--turq)}
+.deep{border-top:1px dashed var(--line);padding-top:14px}
+.deep h4{font-size:15px;margin-bottom:8px}
+.deep ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.deep li{padding-left:22px;position:relative;color:var(--muted);font-size:14.5px}
+.deep li::before{content:"▹";position:absolute;left:0;color:var(--turq)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:3px 11px;font-size:12.5px;font-family:"JetBrains Mono",monospace;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+
+/* project grid */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:40px 0 18px}
+.filters button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:7px 16px;border-radius:99px;cursor:pointer;font-size:14px;transition:all .2s}
+.filters button:hover{color:var(--text);border-color:var(--turq)}
+.filters button[aria-pressed="true"]{background:var(--turq);color:var(--on-turq);border-color:var(--turq);font-weight:600}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.tile{overflow:hidden;display:flex;flex-direction:column;text-align:left;cursor:pointer;padding:0;transition:transform .3s var(--ease),border-color .3s,box-shadow .3s}
+.tile:hover{transform:translateY(-6px);border-color:var(--turq);box-shadow:var(--shadow)}
+.tile.hide{display:none}
+.tile .thumb{background:#06101F;aspect-ratio:16/9;overflow:hidden;border-bottom:1px solid var(--line)}
+.tile .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s var(--ease)}
+.tile:hover .thumb img{transform:scale(1.04)}
+.tile .info{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tile h3{font-size:20px}
+.tile .q{margin:0;color:var(--muted);font-size:14.5px}
+.big{display:flex;align-items:baseline;gap:10px;margin-top:auto;padding-top:8px}
+.big b{font-family:Poppins,sans-serif;font-size:26px;line-height:1}
+.big span{font-size:13px;color:var(--muted)}
+.open{font-size:14px;color:var(--orange);font-weight:600}
+.open::after{content:" →";transition:margin .2s}
+.tile:hover .open::after{margin-left:4px}
+
+/* tools + method */
+.two{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.pad{padding:26px}
+.pad h3.lbl{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;font-family:"JetBrains Mono",monospace;font-weight:500}
+.tg{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.tg h4{margin:0 0 10px;font-size:15px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;font-size:15px}
+.steps li::before{content:"0" counter(s);font-family:"JetBrains Mono",monospace;color:var(--turq);font-size:14px;padding-top:2px}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:14.5px}
+.rules{margin-top:18px;display:flex;flex-wrap:wrap;gap:6px}
+.rule{border:1px solid var(--orange);color:var(--orange);border-radius:99px;padding:3px 11px;font-size:12.5px}
+
+/* timeline */
+.tl{position:relative;list-style:none;margin:0;padding:0}
+.tl::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(var(--turq),var(--blue),var(--violet));transform:translateX(-50%);opacity:.6}
+.tl li{position:relative;width:50%;padding:0 40px 30px 0}
+.tl li:nth-child(even){margin-left:50%;padding:0 0 30px 40px}
+.tl li::after{content:"";position:absolute;top:22px;right:-8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--turq)}
+.tl li:nth-child(even)::after{right:auto;left:-8px}
+.tl .card{padding:18px 20px}
+.tl time{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--turq)}
+.tl h4{font-size:17px;margin:4px 0 4px}
+.tl p{margin:0;color:var(--muted);font-size:14.5px}
+
+/* about + contact */
+.about{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin-bottom:56px}
+.about img{width:150px;height:150px;border-radius:24px;object-fit:cover;border:1px solid var(--line);box-shadow:var(--shadow)}
+.about p{margin:0;color:var(--muted);font-size:17px;max-width:720px}
+.about p strong{color:var(--text);font-weight:600}
+.contact{padding:48px 40px;text-align:center;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:auto -20% -60% -20%;height:120%;background:radial-gradient(closest-side,var(--glow),transparent);pointer-events:none}
+.contact h3{font-size:clamp(30px,4vw,44px);position:relative}
+.contact p{color:var(--muted);max-width:520px;margin:12px auto 26px;position:relative}
+.contact .cta{justify-content:center;position:relative}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px;position:relative}
+.links a{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:10px;text-decoration:none;font-size:14px;color:var(--muted);transition:all .2s}
+.links a:hover{border-color:var(--turq);color:var(--text)}
+.links svg{width:16px;height:16px}
+
+/* footer — structured, no empty corners */
+footer{border-top:1px solid var(--line);margin-top:40px;padding:36px 0 30px;color:var(--muted);font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}
+footer h4{font-size:14px;color:var(--text);margin-bottom:10px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--turq)}
+.fbase{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:13px}
+
+/* case-study drawer */
+dialog{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;color:var(--text)}
+dialog::backdrop{background:rgba(3,7,16,.7);backdrop-filter:blur(3px)}
+dialog[open] .sheet{animation:slide .35s var(--ease)}
+@keyframes slide{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+.sheet{position:fixed;right:0;top:0;bottom:0;width:min(660px,100%);background:var(--panel);border-left:1px solid var(--line);box-shadow:var(--shadow);overflow:auto;padding:26px 28px 34px}
+.sheet .x{position:sticky;top:0;float:right;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:6px 12px;cursor:pointer;z-index:2}
+.sheet h3{margin:8px 0 6px;font-size:28px}
+.sheet .q{color:var(--muted);font-style:italic;margin:0 0 14px}
+.sheet img{border-radius:12px;border:1px solid var(--line);margin:14px 0 18px}
+
+/* scroll reveal (under 1 second, as the video recommends) */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.js-off .rv{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .hero .wrap{grid-template-columns:1fr}
+  .orb{max-width:340px;order:-1}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .flag,.two{grid-template-columns:1fr}
+  .tl::before{left:7px}
+  .tl li,.tl li:nth-child(even){width:100%;margin-left:0;padding:0 0 24px 34px}
+  .tl li::after,.tl li:nth-child(even)::after{left:0;right:auto}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  .wrap{padding:0 16px}
+  .bar{gap:10px;height:60px}
+  .mark span{display:none}
+  nav.top a{padding:8px 8px;font-size:14px}
+  nav.top a span{display:none}
+  .tools .gh{display:none}
+  .hero{padding:36px 0 40px}
+  section.block{padding:52px 0}
+  .head::after{display:none}
+  .tiles{grid-template-columns:1fr}
+  .tg{grid-template-columns:1fr}
+  .par li{grid-template-columns:1fr;gap:2px}
+  .flag .body{padding:22px 20px}
+  .about{grid-template-columns:1fr;text-align:left}
+  .about img{width:110px;height:110px}
+  .contact{padding:36px 20px}
+  .fgrid{grid-template-columns:1fr}
+  .orb .tagchip{display:none}
+  .kpi strong{font-size:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#work">Skip to projects</a>
+
+<header id="top">
+  <div class="wrap bar">
+    <a class="mark" href="#top" aria-label="Hadil Ziane, back to top"><i>HZ</i><span>Hadil Ziane</span></a>
+    <nav class="top" aria-label="Sections">
+      <a href="#numbers"><span>01.</span>Numbers</a>
+      <a href="#work"><span>02.</span>Work</a>
+      <a href="#toolkit"><span>03.</span>Toolkit</a>
+      <a href="#journey"><span>04.</span>Journey</a>
+      <a href="#contact"><span>05.</span>Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="btn ghost small" id="theme" type="button" aria-label="Switch between dark and light theme">Light</button>
+      <a class="btn primary small" href="Hadil_Ziane_Data_Analyst_CV.pdf" download>CV</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="hi mono">Hi, my name is</p>
+      <h1>Hadil Ziane.</h1>
+      <h2 class="grad">I turn messy data into clear decisions.</h2>
+      <p class="lead">Statistician and Data Analyst. I clean, model and forecast real datasets with SQL, Python and Power BI, then explain the result so a non-technical reader can act on it.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See my work</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+      <div class="badge"><i></i>Open to remote roles · Malaysia (UTC+8) · EN / FR / AR</div>
+    </div>
+    <div class="orb" id="orb" aria-hidden="true">
+      <img class="face" src="img/hadil.jpg" alt="" width="192" height="192">
+      <div class="tagchip t1"><b>6</b> public projects</div>
+      <div class="tagchip t2"><b>3.3%</b> forecast error</div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="numbers">
+  <div class="wrap">
+    <div class="head rv"><span class="num mono">01.</span><h2>By the numbers</h2></div>
+    <div class="kpis" id="kpis" aria-label="Key results"></div>
+  </div>
+</section>
+
+<section class="block" id="work">
+  <div class="wrap">
+    <div class="head rv"><span class="num mono">02.</span><h2>Selected work</h2></div>
+    <p class="sub rv">One project in depth, then the rest. Every project shows its numbers and its limits.</p>
+    <div id="flagship"></div>
+    <div class="filters rv" role="group" aria-label="Filter projects">
+      <button aria-pressed="true" data-f="all">All</button>
+      <button aria-pressed="false" data-f="sql">SQL</button>
+      <button aria-pressed="false" data-f="modelling">Modelling</button>
+    </div>
+    <div class="tiles" id="tiles"></div>
+  </div>
+</section>
+
+<section class="block" id="toolkit">
+  <div class="wrap">
+    <div class="head rv"><span class="num mono">03.</span><h2>Toolkit &amp; method</h2></div>
+    <div class="two">
+      <div class="card pad rv">
+        <h3 class="lbl">Tools</h3>
+        <div class="tg">
+          <div><h4>Data preparation</h4><div class="chips"><span class="chip">SQL (SQLite, MySQL)</span><span class="chip">Python (pandas)</span><span class="chip">Excel</span></div></div>
+          <div><h4>Analysis &amp; modelling</h4><div class="chips"><span class="chip">statsmodels</span><span class="chip">scikit-learn</span><span class="chip">R</span><span class="chip">Time series</span></div></div>
+          <div><h4>Visualization</h4><div class="chips"><span class="chip">Power BI (DAX)</span><span class="chip">matplotlib</span></div></div>
+          <div><h4>Good practice</h4><div class="chips"><span class="chip">Git &amp; GitHub</span><span class="chip">Backtesting</span><span class="chip">Documentation</span></div></div>
+        </div>
+      </div>
+      <div class="card pad rv">
+        <h3 class="lbl">Method</h3>
+        <ol class="steps">
+          <li><div><b>Business question</b><span>Start from a decision, not a chart.</span></div></li>
+          <li><div><b>Audit and clean</b><span>Every removal is logged.</span></div></li>
+          <li><div><b>Analyse and test</b><span>Fair comparison on unseen data.</span></div></li>
+          <li><div><b>Recommend and warn</b><span>Dashboard, advice, limits.</span></div></li>
+        </ol>
+        <div class="rules"><span class="rule">Association is not causation</span><span class="rule">Simple models first</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="journey">
+  <div class="wrap">
+    <div class="head rv"><span class="num mono">04.</span><h2>Journey</h2></div>
+    <ol class="tl">
+      <li class="rv"><div class="card"><time>Now</time><h4>PhD student in Data Science, AI &amp; Statistics</h4><p>Universiti Utara Malaysia (UUM) · based in Malaysia</p></div></li>
+      <li class="rv"><div class="card"><time>2026</time><h4>Data Analyst Intern, SONATRACH / Algerian Petroleum Institute</h4><p>Economic and energy datasets, ARDL models</p></div></li>
+      <li class="rv"><div class="card"><time>2025 – 2026</time><h4>Data &amp; BI Trainer, DataSpace, ENSSEA</h4><p>Taught statistics, Python, SQL and Power BI</p></div></li>
+      <li class="rv"><div class="card"><time>MSc</time><h4>MSc Statistics &amp; Economic Foresight, ENSSEA</h4><p>Excellent Distinction, 18/20</p></div></li>
+      <li class="rv"><div class="card"><time>Engineer</time><h4>State Engineer in Statistics (Ing&eacute;nieur d&rsquo;&Eacute;tat), ENSSEA</h4><p>National School of Statistics and Applied Economics, Algiers</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="about rv">
+      <img src="img/hadil.jpg" alt="Portrait of Hadil Ziane" width="192" height="192">
+      <p><strong>Statistician turned Data Analyst.</strong> I like questions with a real decision behind them: who to call first, which discount loses money, what the next six months look like. I work in English, French and Arabic.</p>
+    </div>
+    <div class="card contact rv">
+      <span class="num mono" style="color:var(--turq)">05. What's next?</span>
+      <h3>Let's work together</h3>
+      <p>I'm looking for a remote Data Analyst role. If you have a dataset and a question, I'd like to hear about it.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:hadil26malay@gmail.com">Say hello</a>
+        <a class="btn ghost" href="Hadil_Ziane_Data_Analyst_CV.pdf" download>Download CV</a>
+      </div>
+      <div class="links">
+        <a href="mailto:hadil26malay@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>hadil26malay@gmail.com</a>
+        <a href="https://www.linkedin.com/in/hadil-ziane-6477ba38a" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</a>
+        <a href="https://github.com/Hadil16" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5a3 3 0 0 0-.9-2.4c3-.3 6.1-1.5 6.1-6.6a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.7 12.7 0 0 0-6.6 0C5.8.7 4.7 1 4.7 1a4.8 4.8 0 0 0-.1 3.6A5.2 5.2 0 0 0 3.2 8.4c0 5.1 3.1 6.3 6.1 6.6a3 3 0 0 0-.9 2.4V21"/></svg>GitHub · Hadil16</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><h4>Hadil Ziane</h4><p style="margin:0">Data Analyst · statistics, forecasting and clear dashboards.</p></div>
+      <div><h4>Explore</h4><ul><li><a href="#work">Selected work</a></li><li><a href="#toolkit">Toolkit &amp; method</a></li><li><a href="#journey">Journey</a></li></ul></div>
+      <div><h4>Elsewhere</h4><ul><li><a href="https://github.com/Hadil16" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.linkedin.com/in/hadil-ziane-6477ba38a" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://dil0dev.netlify.app" target="_blank" rel="noopener">Websites for small businesses</a></li></ul></div>
+    </div>
+    <div class="fbase"><span>&copy; 2026 Hadil Ziane</span><span>Data: Indeed Hiring Lab, Our World in Data, UCI and public datasets</span></div>
+  </div>
+</footer>
+
+<dialog id="drawer" aria-labelledby="d-title">
+  <div class="sheet" id="sheet"></div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var KPIS=[
+    {label:"Customer segmentation",value:"77%",note:"of revenue from the top 20% of customers",data:[0,51.9,63.9,71.5,77.2,81.5,84.9,87.7,90,91.9,93.5,94.9,96,96.9,97.7,98.4,98.9,99.3,99.6,99.9,100],max:100,cap:"Cumulative revenue by customer"},
+    {label:"Forecasting",value:"3.3%",note:"average error 13 weeks ahead",data:[0.6,1,1.3,1.7,2,2.1,2.2,2.4,2.6,2.7,2.9,3.2,3.3,3.3,3.5,3.7,3.7,3.8,4,4.3,4.4,4.5,4.7,5,5.1,5.2],max:6,cap:"Error by weeks ahead"},
+    {label:"Energy",value:"99%",note:"of Algeria's electricity comes from gas",data:[96.8,96.8,97.6,96.8,97,96.3,97.2,97.3,97.3,97.6,97.5,96.9,97.1,97.9,98.6,98.3,98.1,98.7,98.4,98.5,98.4,98.6,98.6,98.7],max:100,cap:"Gas share, 2000 to 2023"},
+    {label:"Churn prediction",value:"0.845",note:"AUC on customers never seen",data:[0,28.3,50.8,86.8,100],max:100,cap:"Churners reached by risk group"}
+  ];
+  var FLAG={id:"forecast",tags:"forecasting",kind:"Flagship · Forecasting · Time series",title:"Job Postings Monitor",img:"img/forecast.png",
+     q:"Are data job postings recovering, and what do the next six months look like?",
+     big:"3.3%",bigNote:"error at 13 weeks, 16 models beaten",
+     problem:"US Data &amp; Analytics postings sit <strong>37% below</strong> their pre-Covid level and the direction is unclear.",
+     action:"Weekly series for 4 countries (2020 to 2026); <strong>17 models</strong> compared in a rolling backtest on 44 dates; calibrated 80% and 95% bands.",
+     result:"A damped trend wins with <strong>3.3% error</strong> at 13 weeks against 5.4% for &ldquo;same as today&rdquo;. Forecast: flat in the US, slightly down in Europe; no direction can be claimed with confidence.",
+     deep:["Tested 17 models fairly: each one only sees the past at each of the 44 backtest dates","Checked that the 80% and 95% bands really contain the truth that often","Says plainly when the data cannot support a direction"],
+     chips:["Python","statsmodels","Backtesting","Power BI"],repo:"job-postings-forecast"};
+  var PROJECTS=[
+    {id:"energy",tags:"sql",kind:"SQL · Country comparison",title:"Energy Shift",img:"img/energy.png",
+     q:"How fast is the world moving to clean electricity, and where does Algeria stand?",
+     big:"19% → 30%",bigNote:"renewables in world electricity, 1990 to 2023",
+     problem:"One file mixes 219 countries with 94 regional groups, so adding everything double-counts.",
+     action:"Separated countries from regions (totals checked to <strong>99.5%</strong>), answered six questions with <strong>SQL window functions</strong>, built a five-page dashboard.",
+     result:"Solar grew <strong>12.6 times</strong> in ten years. Algeria still gets <strong>98.7% of its electricity from gas</strong>, Morocco rose from 6% to 22% renewables.",
+     chips:["SQL (SQLite)","Python","Power BI (DAX)"],repo:"energy-transition-analysis"},
+    {id:"rfm",tags:"modelling",kind:"Segmentation · Retention",title:"Customer Segmentation (RFM)",img:"img/segments.png",
+     q:"Which customers are worth the most, and who is slipping away?",
+     big:"22% → 68%",bigNote:"of revenue comes from 22% of customers",
+     problem:"A gift retailer with 1M+ transaction lines, duplicates, cancellations and lines without a customer.",
+     action:"Cleaned the data with <strong>every removal logged</strong>, scored recency, frequency and spend, built 8 segments and monthly retention cohorts.",
+     result:"<strong>360 former top customers</strong> have been silent for about a year; only about <strong>21%</strong> of new customers order again the next month.",
+     chips:["Python","pandas","Cohorts","Power BI"],repo:"customer-segmentation-rfm"},
+    {id:"churn",tags:"modelling",kind:"Prediction · Customer churn",title:"Telco Churn: Who Leaves?",img:"img/churn.png",
+     q:"Who leaves, why, and who should the retention team call first?",
+     big:"0.845",bigNote:"AUC; the riskiest 20% hold 51% of churners",
+     problem:"26.5% of customers left, taking <strong>30.5%</strong> of monthly revenue.",
+     action:"Logistic regression with odds ratios; found and fixed a <strong>collinearity</strong> problem (VIF 863 to 2.8); ranked customers by cross-validated risk.",
+     result:"Month-to-month contracts churn at <strong>43%</strong> against 3% for two-year contracts; calling the riskiest 20% reaches 51% of churners.",
+     chips:["Python","scikit-learn","statsmodels","Power BI"],repo:"telco-churn-analysis"},
+    {id:"olist",tags:"sql",kind:"SQL · E-commerce",title:"Olist: late deliveries and reviews",img:"img/olist.png",
+     q:"Do late deliveries hurt customer satisfaction?",big:"2.57 vs 4.29",bigNote:"stars, late against on time",
+     problem:"A Brazilian marketplace wants to know what hurts its customer reviews.",
+     action:"SQL and Python on 99,092 orders; statistical tests; three-page Power BI dashboard.",
+     result:"Late orders average <strong>2.57 stars</strong> against 4.29 on time, and only <strong>3%</strong> of customers buy twice.",
+     chips:["SQL","Python","Power BI"],repo:"olist-ecommerce-analysis"},
+    {id:"superstore",tags:"sql modelling",kind:"Regression · Pricing",title:"Superstore: where profit is lost",img:"img/superstore.png",
+     q:"Where does a retailer lose money?",big:"-$135K",bigNote:"lost on lines discounted over 20%",
+     problem:"A retail chain sells $2.3M a year but 18.7% of order lines lose money.",
+     action:"SQL, a regression on discount and margin, break-even discount by sub-category, Power BI and an Excel check.",
+     result:"Discounts above 20% lose money and <strong>do not sell more units</strong> (about 3.8 per line whatever the discount).",
+     chips:["SQL","Python","Power BI","Excel"],repo:"superstore-profit-analysis"}
+  ];
+  var ALL=[FLAG].concat(PROJECTS);
+  function chips(p){return '<div class="chips">'+p.chips.map(function(c){return '<span class="chip">'+c+'</span>'}).join("")+'</div>'}
+  function links(p){return '<div class="actions"><a class="btn primary small" href="https://github.com/Hadil16/'+p.repo+'#readme" target="_blank" rel="noopener">Full case study</a><a class="btn ghost small" href="https://github.com/Hadil16/'+p.repo+'/tree/main/src" target="_blank" rel="noopener">Code</a></div>'}
+  function par(p){return '<ul class="par"><li><b>Problem</b><span>'+p.problem+'</span></li><li><b>Action</b><span>'+p.action+'</span></li><li><b>Result</b><span>'+p.result+'</span></li></ul>'}
+
+  function spark(d,max){
+    var w=240,h=46,n=d.length,pts=d.map(function(v,i){return [Math.round(i/(n-1)*w*10)/10, Math.round((h-4-(v/max)*(h-8))*10)/10]});
+    var line=pts.map(function(p){return p[0]+","+p[1]}).join(" ");
+    var area="0,"+h+" "+line+" "+w+","+h;
+    return '<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" aria-hidden="true"><polygon points="'+area+'" fill="var(--turq)" opacity=".14"/><polyline points="'+line+'" fill="none" stroke="var(--turq)" stroke-width="2" vector-effect="non-scaling-stroke"/><circle cx="'+pts[n-1][0]+'" cy="'+pts[n-1][1]+'" r="3.5" fill="var(--orange)"/></svg>';
+  }
+  document.getElementById("kpis").innerHTML=KPIS.map(function(k){
+    return '<div class="card kpi rv"><small>'+k.label+'</small><strong class="grad">'+k.value+'</strong><em>'+k.note+'</em>'+spark(k.data,k.max)+'<small>'+k.cap+'</small></div>';
+  }).join("");
+
+  document.getElementById("flagship").innerHTML='<article class="card flag rv"><div class="shot"><img src="'+FLAG.img+'" alt="Forecast dashboard for the Job Postings Monitor" width="1166" height="656"></div><div class="body"><span class="kind">'+FLAG.kind+'</span><h3>'+FLAG.title+'</h3><p class="q">'+FLAG.q+'</p>'+par(FLAG)+
+    '<div class="deep"><h4>Why this one goes deep</h4><ul>'+FLAG.deep.map(function(d){return '<li>'+d+'</li>'}).join("")+'</ul></div>'+chips(FLAG)+links(FLAG)+'</div></article>';
+
+  document.getElementById("tiles").innerHTML=PROJECTS.map(function(p){
+    return '<button class="card tile rv" type="button" data-id="'+p.id+'" data-tags="'+p.tags+'"><div class="thumb"><img src="'+p.img+'" alt="" width="1166" height="656" loading="lazy"></div><div class="info"><span class="kind">'+p.kind+'</span><h3>'+p.title+'</h3><p class="q">'+p.q+'</p><div class="big"><b class="grad">'+p.big+'</b><span>'+p.bigNote+'</span></div><span class="open">Open case study</span></div></button>';
+  }).join("");
+
+  var dlg=document.getElementById("drawer"),sheet=document.getElementById("sheet"),lastBtn=null;
+  function openProject(id,btn){
+    var p=ALL.filter(function(x){return x.id===id})[0]; if(!p) return;
+    lastBtn=btn;
+    sheet.innerHTML='<button class="x" type="button" id="close">Close</button><span class="kind">'+p.kind+'</span><h3 id="d-title">'+p.title+'</h3><p class="q">'+p.q+'</p>'+
+      '<img src="'+p.img+'" alt="Dashboard screenshot for '+p.title+'" width="1166" height="656">'+par(p)+chips(p)+links(p);
+    if(dlg.showModal){dlg.showModal();}else{dlg.setAttribute("open","")}
+    document.getElementById("close").addEventListener("click",function(){dlg.close()});
+    document.getElementById("close").focus();
+  }
+  document.addEventListener("click",function(e){
+    var t=e.target.closest&&e.target.closest(".tile");
+    if(t){openProject(t.getAttribute("data-id"),t);}
+  });
+  dlg.addEventListener("click",function(e){var r=sheet.getBoundingClientRect();if(e.clientX<r.left){dlg.close()}});
+  dlg.addEventListener("close",function(){if(lastBtn){lastBtn.focus()}});
+
+  var buttons=document.querySelectorAll(".filters button");
+  buttons.forEach(function(b){b.addEventListener("click",function(){
+    buttons.forEach(function(x){x.setAttribute("aria-pressed","false")}); b.setAttribute("aria-pressed","true");
+    var f=b.getAttribute("data-f");
+    document.querySelectorAll(".tile").forEach(function(it){
+      var show=f==="all"||(it.getAttribute("data-tags")||"").split(" ").indexOf(f)>-1; it.classList.toggle("hide",!show);
+    });
+  })});
+
+  var themeBtn=document.getElementById("theme"),root=document.documentElement,onTheme=null;
+  function setTheme(t){root.setAttribute("data-theme",t);themeBtn.textContent=t==="dark"?"Light":"Dark";try{localStorage.setItem("hz-theme",t)}catch(e){} if(onTheme)onTheme();}
+  var saved=null;try{saved=localStorage.getItem("hz-theme")}catch(e){}
+  setTheme(saved==="light"?"light":"dark");
+  themeBtn.addEventListener("click",function(){setTheme(root.getAttribute("data-theme")==="dark"?"light":"dark")});
+
+  // header border + active link + scroll reveal
+  var header=document.querySelector("header");
+  window.addEventListener("scroll",function(){header.classList.toggle("scrolled",window.scrollY>10)},{passive:true});
+  var navLinks=document.querySelectorAll("nav.top a");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){
+      navLinks.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+en.target.id)});
+    }})},{rootMargin:"-30% 0px -65% 0px"});
+    ["numbers","work","toolkit","journey","contact"].forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s)});
+    var rio=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");rio.unobserve(en.target)}})},{rootMargin:"0px 0px -8% 0px"});
+    document.querySelectorAll(".rv").forEach(function(el){rio.observe(el)});
+  } else { root.classList.add("js-off"); }
+
+  // hero: 3D "data globe" of points that follows the cursor
+  var orb=document.getElementById("orb");
+  var still=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(window.THREE&&orb){
+    try{
+      var renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+      orb.insertBefore(renderer.domElement,orb.firstChild);
+      var scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(45,1,.1,100);camera.position.z=3.4;
+      var N=1600,pos=new Float32Array(N*3),col=new Float32Array(N*3),golden=Math.PI*(3-Math.sqrt(5));
+      for(var i=0;i<N;i++){var y=1-(i/(N-1))*2,r=Math.sqrt(1-y*y),th=golden*i;pos[i*3]=Math.cos(th)*r;pos[i*3+1]=y;pos[i*3+2]=Math.sin(th)*r;}
+      var geo=new THREE.BufferGeometry();geo.setAttribute("position",new THREE.BufferAttribute(pos,3));geo.setAttribute("color",new THREE.BufferAttribute(col,3));
+      var mat=new THREE.PointsMaterial({size:.022,vertexColors:true,transparent:true,opacity:.95,depthWrite:false});
+      var globe=new THREE.Points(geo,mat);
+      var ringGeo=new THREE.RingGeometry(1.32,1.335,128),ringMat=new THREE.MeshBasicMaterial({transparent:true,opacity:.5,side:THREE.DoubleSide});
+      var ring=new THREE.Mesh(ringGeo,ringMat);ring.rotation.x=Math.PI/2.4;
+      var group=new THREE.Group();group.add(globe);group.add(ring);scene.add(group);
+      onTheme=function(){
+        var cs=getComputedStyle(root),a=new THREE.Color(cs.getPropertyValue("--turq").trim()),b=new THREE.Color(cs.getPropertyValue("--violet").trim()),o=new THREE.Color(cs.getPropertyValue("--orange").trim()),c=new THREE.Color();
+        for(var i=0;i<N;i++){ if(i%97===0){c.copy(o);} else {c.copy(a).lerp(b,(pos[i*3+1]+1)/2);} col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b; }
+        geo.attributes.color.needsUpdate=true; ringMat.color=a.clone();
+      };
+      onTheme();
+      function size(){var s=orb.clientWidth;renderer.setSize(s,s,false);camera.aspect=1;camera.updateProjectionMatrix();}
+      size();window.addEventListener("resize",size);
+      var tx=0,ty=0;
+      window.addEventListener("pointermove",function(e){tx=(e.clientY/window.innerHeight-.5)*.6;ty=(e.clientX/window.innerWidth-.5)*.8;},{passive:true});
+      var visible=true;
+      if("IntersectionObserver" in window){new IntersectionObserver(function(es){visible=es[0].isIntersecting}).observe(orb);}
+      (function tick(){
+        if(visible){ if(!still){globe.rotation.y+=.0025;} group.rotation.x+=(tx-group.rotation.x)*.05; group.rotation.y+=(ty-group.rotation.y)*.05; renderer.render(scene,camera); }
+        requestAnimationFrame(tick);
+      })();
+    }catch(err){}
+  }
+})();
+</script>
+</body>
+</html>
